@@ -1,4 +1,5 @@
 const AWS = require('aws-sdk');
+const rdsDataResponse = require('./rdsDataResponse');
 
 const dataServiceParams = {
   resourceArn: process.env.RDS_ARN,
@@ -45,7 +46,10 @@ async function getUsers() {
   //      {"stringValue":"anggit@isi.co.id"}
   //    ]
   //  ]
-  return result;
+
+  const users = rdsDataResponse.parseUsersData(result);
+
+  return users;
 }
 
 async function createUsers(insertParams) {

@@ -4,11 +4,11 @@ exports.handler = async (event, context) => {
   let response;
 
   if (event.httpMethod === 'GET') {
-    const getUsers = await rdsDataServices.getUsers();
-    const data = getUsers; 
+    const getUsers = await rdsDataServices.getUsers(); 
+
     response = {
       statusCode: 200,
-      body: JSON.stringify(data),
+      body: JSON.stringify(getUsers),
     };
 
   } else {
