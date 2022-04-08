@@ -1,6 +1,7 @@
 const AWS = require('aws-sdk');
 const rdsDataResponse = require('./rdsDataResponse');
 
+// Get RDS_ARN, SECRET_ARN, and RDS_DB (database name) from environment variable
 const dataServiceParams = {
   resourceArn: process.env.RDS_ARN,
   secretArn: process.env.SECRET_ARN,

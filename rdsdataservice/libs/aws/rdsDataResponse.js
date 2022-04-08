@@ -1,3 +1,6 @@
+// parseUsersData for parsing or mapping RDS Data Service Response
+// to JSON
+// https://stackoverflow.com/a/57296495
 function parseUsersData(getUsers) {
   const users = [];
 
